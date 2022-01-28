@@ -1,15 +1,26 @@
-#Linear Search Algorithm
+# Linear Search Algorithm
 
-#Search string for the letter A
-def linSrch(word):
-    count = 0;
-    for x in word:
-        if x == 'a' or x == 'A':
-            count += 1;
-    if count == 0:
-        print("There is not a letter A in this string");
-    else:
-        print("The letter A count for this string is", str(count) + ".");
 
-print("Please enter a string to search")
-linSrch(input())        
+from random import randint
+from tkinter import N
+
+# Linear Search Algorithm
+
+def linSrch(numList, key):
+    for i in range(len(numList)):
+        if numList[i] == key:
+            return i
+    return -1
+
+
+# Test the Search 
+numList = [2, 4, 6, 8, 9, 10, 11, 12]
+
+print('Please choose a number from below to find out its index')
+print(str(numList))
+key = int(input())
+indexkey = linSrch(numList, key)
+if indexkey == -1:
+    print("number not found in list")
+else:
+    print("The index for", str(key), "is", str(indexkey) + '.')
